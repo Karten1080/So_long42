@@ -6,7 +6,7 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 18:20:00 by asmati            #+#    #+#             */
-/*   Updated: 2025/10/17 19:03:44 by asmati           ###   ########.fr       */
+/*   Updated: 2025/10/23 21:53:46 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,23 @@ void	init_vars(t_vars *vars)
 	vars->y = 0;
 }
 
+static int	check_ber_extension(const char *filename)
+{
+	size_t	len;
+
+	if (!filename)
+		return (ft_printf("Error: no map file provided.\n"), 1);
+	len = ft_strlen(filename);
+	if (len < 4 || !(filename[len - 4] == '.' && filename[len - 3] == 'b'
+			&& filename[len - 2] == 'e' && filename[len - 1] == 'r'))
+		return (ft_printf("Error: map file must have a .ber extension\n"), 1);
+	return (0);
+}
+
 int	validate_and_load(t_vars *vars, char *map_file)
 {
+	if (check_ber_extension(map_file) == 1)
+		return (1);
 	vars->map = load_map(map_file);
 	if (!vars->map)
 		return (ft_printf("Error: failed to load map.\n"), 1);

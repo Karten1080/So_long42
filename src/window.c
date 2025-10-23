@@ -6,7 +6,7 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 11:38:24 by asmati            #+#    #+#             */
-/*   Updated: 2025/10/06 19:32:07 by asmati           ###   ########.fr       */
+/*   Updated: 2025/10/23 22:23:52 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int	mapmap(t_vars *vars)
 			"assets/XPM/netherblock.xpm", &img_width, &img_height);
 	vars->spawn = mlx_xpm_file_to_image(vars->mlx, "assets/XPM/bed.xpm",
 			&img_width, &img_height);
+	if (check_xmp(vars))
+		return (1);
 	return (0);
 }
 

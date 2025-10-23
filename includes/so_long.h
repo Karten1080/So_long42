@@ -6,7 +6,7 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 00:31:18 by asmati            #+#    #+#             */
-/*   Updated: 2025/10/17 19:03:44 by asmati           ###   ########.fr       */
+/*   Updated: 2025/10/23 22:16:39 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,5 +116,6 @@ int			check_map_validity(char **map);
 int			check_map_entry(char **map);
 int			check_map_size(char **map);
 void		count_elements(char **map, int *exit_c, int *player_c, int *coll_c);
+int			check_xmp(t_vars *vars);
 
 #endif

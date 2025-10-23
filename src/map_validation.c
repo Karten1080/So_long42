@@ -2,14 +2,11 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   map_validation.c                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+
-	+:+     */
-/*   By: asmati <asmati@student.42.fr>              +#+  +:+
-	+#+        */
-/*                                                +#+#+#+#+#+
-	+#+           */
-/*   Created: 2025/09/26 23:50:00 by asmati            #+#    #+#             */
-/*   Updated: 2025/09/26 23:50:00 by asmati           ###   ########.fr       */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/23 22:12:46 by asmati            #+#    #+#             */
+/*   Updated: 2025/10/23 22:12:46 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +69,24 @@ int	check_map_entry(char **map)
 		return (1);
 	if (check_bottom_wall(map))
 		return (1);
+	return (0);
+}
+
+int check_xmp(t_vars *vars)
+{
+	if (!vars->mur)
+		return (ft_printf("Error: Failed to load bedrock.xpm\n"), 1);
+	if (!vars->sol)
+		return (ft_printf("Error: Failed to load coin.xpm\n"), 1);
+	if (!vars->img1)
+		return (ft_printf("Error: Failed to load zaza.xpm\n"), 1);
+	if (!vars->img2)
+		return (ft_printf("Error: Failed to load zaza2.xpm\n"), 1);
+	if (!vars->end)
+		return (ft_printf("Error: Failed to load nether.xpm\n"), 1);
+	if (!vars->feuille)
+		return (ft_printf("Error: Failed to load netherblock.xpm\n"), 1);
+	if (!vars->spawn)
+		return (ft_printf("Error: Failed to load bed.xpm\n"), 1);
 	return (0);
 }
