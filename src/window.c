@@ -6,7 +6,7 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 11:38:24 by asmati            #+#    #+#             */
-/*   Updated: 2025/10/23 22:23:52 by asmati           ###   ########.fr       */
+/*   Updated: 2025/10/24 00:39:04 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,10 @@ int	mapmap(t_vars *vars)
 	int	img_width;
 	int	img_height;
 
-	img_width = 0;
-	img_height = 0;
 	if (!vars->map)
 		return (ft_printf("Error: map is NULL in mapmap\n"), 1);
 	img_height = get_map_height(vars->map) * TILE_SIZE;
-	img_width = get_map_width(vars->map) * TILE_SIZE;
+	img_width = get_map_width(vars->map) * TILE_SIZE;		
 	vars->win = mlx_new_window(vars->mlx, img_width, img_height, "so_long");
 	vars->mur = mlx_xpm_file_to_image(vars->mlx, "assets/XPM/bedrock.xpm",
 			&img_width, &img_height);
@@ -38,8 +36,8 @@ int	mapmap(t_vars *vars)
 			"assets/XPM/netherblock.xpm", &img_width, &img_height);
 	vars->spawn = mlx_xpm_file_to_image(vars->mlx, "assets/XPM/bed.xpm",
 			&img_width, &img_height);
-	if (check_xmp(vars))
-		return (1);
+	if(check_xmp(vars))
+		return 1;
 	return (0);
 }
 

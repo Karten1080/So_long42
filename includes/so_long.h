@@ -6,7 +6,7 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 00:31:18 by asmati            #+#    #+#             */
-/*   Updated: 2025/10/23 22:16:39 by asmati           ###   ########.fr       */
+/*   Updated: 2025/10/25 03:25:52 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ void		free_all(t_vars *vars);
 int			check_rectangle(char **map);
 int			check_map_elements(char **map);
 t_point		get_player_position(char **map);
+int			is_coin_blocked(char **map, int x, int y);
 int			is_player_blocked(char **map);
 int			check_map_validity(char **map);
 int			check_map_entry(char **map);

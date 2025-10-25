@@ -74,3 +74,4 @@ int	render_next_frame(void *param)
 			vars->y);
 	return (0);
 }
+

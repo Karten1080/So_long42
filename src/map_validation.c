@@ -72,7 +72,7 @@ int	check_map_entry(char **map)
 	return (0);
 }
 
-int check_xmp(t_vars *vars)
+int	check_xmp(t_vars *vars)
 {
 	if (!vars->mur)
 		return (ft_printf("Error: Failed to load bedrock.xpm\n"), 1);
